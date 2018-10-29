@@ -26,7 +26,7 @@
 </nav>
 <!-- Fin Barra de Navegacion -->
 
-<body ng-app="OpenWatherMap" ng-controller="OpenWatherMap">
+<body ng-app="OpenWatherMap" ng-controller="OpenWatherMap" ng-init="showImg = false">
 
   <br><br>  
 
@@ -36,20 +36,66 @@
           <div class="panel-body">
                 <div class="tab-content col-sm-12">
 
-                <h4 class="h4">Buscar Pronostico</h4>
+                <h4 class="h4">Buscar Pronostico</h4> <br>
 
-                <input id="lstCities" type="text" ng-model="city" placeholder="Ciudad">
+                <div class="tab-content col-sm-12">
+                  <div class="row">
 
-                <button class="btn-primary btn" ng-click="buscarCiudad()">Buscar</button> <br>
+                    <div class="col-sm-1"></div>
 
-                  {{ ciudad }}
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[0].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[0].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[0].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[0].getMax() }}</h6> 
+                    </div>
 
-                  <div ng-repeat="day in fiveDays">
-                    <img src="{{ day.getImg() }}" height="100" width="100">
-                    Minima: {{ day.getMin() }} 
-                    Maxima: {{ day.getMax() }}
-                    Dia: {{ day.getDay() }}
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[1].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[1].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[1].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[1].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[2].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[2].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[2].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[2].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[3].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[3].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[3].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[3].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[4].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[4].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[4].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[4].getMax() }}</h6> 
+                    </div>
+
                   </div>
+                </div>
+
+                <br>
+
+                <h6 class="h6" style="font-size: 70%">EJ: Roma, Madrid, El Cairo..</h6>
+                <input id="lstCities" type="text" ng-model="city" placeholder="Ciudad">
+                <button class="btn-primary btn" ng-click="buscarCiudad()">Buscar</button> {{ ciudad }}
+                
+              </div> <br>
     
             </div>
           </div>
@@ -65,7 +111,8 @@
 
 <script src="../assets/js/Funciones.js"></script>
 <script src="../assets/js/BuscarCiudad.js"></script>
-<script src="../assets/js/SugerirCiudad.js"></script>
+<!--
+<script src="../assets/js/SugerirCiudad.js"></script> -->
 
 <!-- Footer -->
   <section id="footer">

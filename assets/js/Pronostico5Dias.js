@@ -126,6 +126,8 @@ angular.module('OpenWatherMap.App', []).controller('OpenWatherMap.Ctrl', functio
     var day_5 = new Clima(tempMin.toFixed(1), tempMax.toFixed(1), fech, img);
     $scope.fiveDays.push(day_5);
 
+    $scope.showImg = true;         //Hacemos que aparezca las Imágenes
+
   });
 
 });
