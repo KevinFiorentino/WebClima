@@ -9,6 +9,7 @@
 
     <title>Distribuidos 2018</title>
 
+    <script src="./assets/js/Angular.js"></script>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/Distribuidos.css">
     
@@ -50,23 +51,305 @@
                   <button type="submit" class="btn btn-primary">Login</button>
                   
                 </form>
-                
-                <br><br>
 
-                <h4 class="h4">Ciudades m&aacute;s consultadas por nuestros usuarios</h4>
+                <br>
 
-                <br><br><br><br><br><br>
+                <a href="./view/Registrarme.html">Crear una cuenta</a>
     
     				</div>
     			</div>
     		</div>
     	</div>
     </div>
+
+<section>
+  <div class="container">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+          <div class="panel-body">
+
+              <div ng-app="OpenWatherMapTop5" ng-controller="OpenWatherMapTop5" ng-init="showImg = false">
+
+                <h3 class="h3">Ciudades m&aacute;s consultadas por nuestros usuarios</h3> <br>
+         
+                <div class="tab-content col-sm-12">
+                  <div class="row">
+                    
+                    <div class="col-sm-2"><h5 class="h5">{{ ciudadObj[0].getName() }}</h5></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[0].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[0].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[0].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[0].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[1].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[1].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[1].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[1].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[2].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[2].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[2].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[2].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[3].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[3].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[3].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[3].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[4].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[4].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[4].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[4].getMax() }}</h6> 
+                    </div>
+
+                  </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-content col-sm-12">
+                  <div class="row">
+
+                    <div class="col-sm-2"><h5 class="h5">{{ ciudadObj[1].getName() }}</h5> </div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[5].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[5].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[5].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[5].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[6].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[6].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[6].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[6].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[7].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[7].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[7].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[7].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[8].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[8].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[8].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[8].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[9].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[9].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[9].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[9].getMax() }}</h6> 
+                    </div>
+
+                  </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-content col-sm-12">
+                  <div class="row">
+
+                    <div class="col-sm-2"><h5 class="h5">{{ ciudadObj[2].getName() }}</h5></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[10].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[10].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[10].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[10].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[11].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[11].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[11].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[11].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[12].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[12].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[12].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[12].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[13].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[13].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[13].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[13].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[14].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[14].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[14].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[14].getMax() }}</h6> 
+                    </div>
+
+                  </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-content col-sm-12">
+                  <div class="row">
+
+                    <div class="col-sm-2"><h5 class="h5">{{ ciudadObj[3].getName() }}</h5></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[15].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[15].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[15].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[15].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[16].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[16].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[16].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[16].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[17].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[17].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[17].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[17].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[18].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[18].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[18].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[18].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[19].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[19].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[19].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[19].getMax() }}</h6> 
+                    </div>
+
+                  </div>
+                </div>
+
+                <br><br>
+
+                <div class="tab-content col-sm-12">
+                  <div class="row">
+
+                    <div class="col-sm-2"><h5 class="h5">{{ ciudadObj[4].getName() }}</h5></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[20].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[20].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[20].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[20].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[21].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[21].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[21].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[21].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[22].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[22].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[22].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[22].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[23].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[23].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[23].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[23].getMax() }}</h6> 
+                    </div>
+
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-1">
+                      <h6 class="h6" style="font-size: 90%">{{ fiveDays[24].getDay() }}</h6>
+                      <img ng-show="showImg" ng-src="{{ fiveDays[24].getImg() }}" height="80" width="80"> <br>
+                      <h6 class="h6" style="font-size: 80%"><strong>Min: </strong>{{ fiveDays[24].getMin() }}</h6>
+                      <h6 class="h6" style="font-size: 80%"><strong>Max: </strong>{{ fiveDays[24].getMax() }}</h6> 
+                    </div>
+
+                  </div>
+                </div>
+
+                </div> <br>
     
-    <!-- JQuery -->
-  
+          </div>  <!-- END DIV Angular -->
+        </div>
+      </div>
+    </div>      
+  </section>
+    
+<!-- JQuery -->  
 <script type="text/javascript" src="./assets/js/jquery.min.js"></script> 
 <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+
+<!-- Angular - Web Services -->
+<script src="./assets/js/Funciones.js"></script>
+<script src="./assets/js/CiudadesMasBuscadas.js"></script>
 
 <!-- Footer -->
   <section id="footer">

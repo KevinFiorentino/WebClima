@@ -16,6 +16,13 @@
     
   }
 
+  function Ciudad(name) {
+    this.name = name;
+
+    this.getName = function() {
+      return this.name; }
+  }
+
   /**
    *  Función que devuelve día de la semana, fecha y mes dependiendo el día que se calcula, sea del primero al quito pronostico
    *

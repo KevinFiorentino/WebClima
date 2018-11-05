@@ -7,7 +7,7 @@ class DataSource {
     
     /** Conectar a Origen de Datos ODBC */
     public function __construct() {     
-        $this->dsn = "OpenWeatherMap";
+        $this->dsn = "openweathermap";
         $this->cid = odbc_connect($this->dsn, "", "");
         
         if(!$this->cid) {
