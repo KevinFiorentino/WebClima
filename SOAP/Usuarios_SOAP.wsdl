@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<definitions name="UsuariosSOAPServicio" 
+    targetNamespace="urn:UsuariosSOAP"
+     xmlns:tns="urn:UsuariosSOAP"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/">
+ 
+
+<!-- Input Alta Usuarios -->
+  <message name="UsuariosSOAPPeticionAlta">
+    <part name="user" type="xsd:string" />
+    <part name="pass" type="xsd:string" />
+    <part name="idCiudad" type="xsd:int" />
+  </message>
+
+<!-- Output Alta Usuarios -->
+  <message name="UsuariosSOAPRespuestaAlta">
+    <part name="respuesta" type="xsd:array" />
+  </message>
+
+
+<!-- Input Baja Usuarios -->
+  <message name="UsuariosSOAPPeticionBaja">
+    <part name="idUsuario" type="xsd:int" />
+  </message>
+
+<!-- Output Baja Usuarios -->
+  <message name="UsuariosSOAPRespuestaBaja">
+    <part name="respuesta" type="xsd:string" />
+  </message>
+
+
+<!-- Input Pronostico -->
+  <message name="UsuariosSOAPPronosticoPeticion">
+    <part name="ciudad" type="xsd:string" />
+  </message>
+
+<!-- Output Pronostico -->
+  <message name="UsuariosSOAPPronosticoRespuesta">
+    <part name="respuesta" type="xsd:array" />
+  </message>
+ 
+ 
+ <!-- Declaramos Inputs y Outputs para cada Servicio -->
+  <portType name="UsuariosSOAPPort">
+    <operation name="AltaUsuarios">
+      <input message="tns:UsuariosSOAPPeticionAlta" />
+      <output message="tns:UsuariosSOAPRespuestaAlta" />
+    </operation>
+    <operation name="BajaUsuarios">
+      <input message="tns:UsuariosSOAPPeticionBaja" />
+      <output message="tns:UsuariosSOAPRespuestaBaja" />
+    </operation>
+    <operation name="Pronostico">
+      <input message="tns:UsuariosSOAPPronosticoPeticion" />
+      <output message="tns:UsuariosSOAPPronosticoRespuesta" />
+    </operation>
+  </portType>
+ 
+  <binding name="UsuariosSOAPBinding" type="tns:UsuariosSOAPPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AltaUsuarios">
+        <soap:operation soapAction="urn:UsuariosSOAP#AltaUsuarios" />
+        <input>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="BajaUsuarios">
+        <soap:operation soapAction="urn:UsuariosSOAP#BajaUsuarios" />
+        <input>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </output>
+    </operation>
+    <operation name="Pronostico">
+        <soap:operation soapAction="urn:UsuariosSOAP#Pronostico" />
+        <input>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:UsuariosSOAP"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </output>
+    </operation>
+  </binding>
+ 
+  <service name="UsuariosSOAPServicio">
+    <port name="UsuariosSOAPPort" binding="tns:UsuariosSOAPBinding">
+      <soap:address location="http://localhost/WebClima/SOAP/Usuarios_Server.php" />
+    </port>
+  </service>
+</definitions>

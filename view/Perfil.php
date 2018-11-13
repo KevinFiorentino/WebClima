@@ -1,3 +1,7 @@
+<?php
+  @session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,13 +21,27 @@
 <!-- Barra de Navegacion -->
 <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
   <ul class="navbar-nav">
-    <li class="nav-item active"><a href="./Bienvenido.html">Bienvenido</a></li>
-    <li class="nav-item"><a href="./BuscarPronostico.html">Buscar Pronostico</a></li>
+    <li class="nav-item active"><a href="../../WebClima/view/Bienvenido.html">Bienvenido</a></li>
+    <li class="nav-item"><a href="../../WebClima/view/BuscarPronostico.html">   BuscarPronostico</a></li>
+    <li class="nav-item"><a href="../../WebClima/view/Perfil.php">  Perfil</a></li>
+    <li class="nav-item"><a href="../../WebClima/view/CerrarSesion.php">  CerrarSesi&oacute;n</a></li>
   </ul>
 </nav>
 <!-- Fin Barra de Navegacion -->
 
 <body>
+
+      <?php if(isset( $_SESSION['modUser'] )) { 
+        echo '<div class="container">
+                <div class="col-xs-12">
+                    <div class="alert-spot alert-spot-success">
+                        <div class="alert-link-text">
+                            <h4>' . $_SESSION['modUser'] . '</h4>
+                        </div>
+                    </div>
+                </div>
+              </div>';
+        unset( $_SESSION['modUser'] ); }     ?>
 
 <section>
   <div class="container">
@@ -31,21 +49,15 @@
       <div class="panel panel-primary">
           <div class="panel-body">
 
-            <h4 class="h4">Crear una cuenta en OpenWeatherMap - Distribuidos</h4> <br>
+            <h4 class="h4">Perfil de Usuario</h4> <br>
 
             <div class="row">
               <div class="tab-content col-sm-4">
               
-                <form action="http://localhost/WebClima/REST/AltaUsuariosCURL.php" method="POST">
+                <form action="http://localhost/WebClima/REST/ModUsuariosCURL.php" method="POST">
+
+                  <input type="hidden" name="id" value="<?php echo $_SESSION['idUsuario'];?>">
               
-                  <div class="form-group">
-                    <label for="user">Nombre Usuario:</label>
-                    <input type="text" class="form-control" name="user" placeholder="Usuario">
-                  </div>
-                  <div class="form-group">
-                    <label for="pass">Contrase&ntilde;a:</label>
-                    <input type="password" class="form-control" name="pass" placeholder="Constrase&ntilde;a">
-                  </div>
                   <div class="form-group">
                     <label for="ciudad">Ciudad:</label>
                     <select class="form-control" name="ciudad">
@@ -57,13 +69,31 @@
                     </select>
                   </div>
                   <br>
-                  <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                  <button type="submit" class="btn btn-primary">Modificar Ciudad</button>
                   
                 </form>
 
       
               </div>
             </div>  
+
+            <div class="row">
+              <div class="tab-content col-sm-4">
+              
+                <form action="http://localhost/WebClima/REST/DeleteUsuariosCURL.php" method="POST">
+              
+                  <input type="hidden" name="id" value="<?php echo $_SESSION['idUsuario'];?>">
+
+                  <br>
+                  <button type="submit" class="btn btn-primary">Eliminar Cuenta</button>
+                  
+                </form>
+
+      
+              </div>
+            </div>  
+
+
           </div>
         </div>
       </div>
