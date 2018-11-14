@@ -1,0 +1,9 @@
+USE `OpenWeatherMap`;
+ALTER TABLE usuario MODIFY idUsuario INT AUTO_INCREMENT;
+
+
+-----
+
+
+LOAD DATA LOCAL INFILE "C:/ciudades.csv" INTO TABLE openweathermap.ciudad 
+FIELDS TERMINATED BY ',';
