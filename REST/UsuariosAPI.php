@@ -102,7 +102,7 @@ class UsuariosAPI {
         else if( isset($obj->idUsuario) && isset($obj->idCiudad) ) {
             $usuariosDao = new UsuariosDao();     
             $usuariosDao->updateUsuario($obj->idUsuario, $obj->idCiudad);
-            $this->response(200,"success","new record added");                             
+            $this->response(200,"success","Usuario Modificado");                             
         }
         else{
              $this->response(422,"error","The property is not defined");
@@ -126,7 +126,7 @@ class UsuariosAPI {
         else if(isset($obj->idUsuario)) {
             $usuariosDao = new UsuariosDao();     
             $usuariosDao->deleteUsuario($obj->idUsuario);
-            $this->response(200,"success","new record added");                             
+            $this->response(200,"success","Usuario Borrado Exitosamente");                             
         }
         else{
              $this->response(422,"error","The property is not defined");
