@@ -2,10 +2,11 @@
 
 ## Universidad Nacional de Lanús - Licenciatura en Sistemas
 
-### Catedra Sistemas Distribuidos 2018 
+### Cátedra Sistemas Distribuidos 2018 
 
 * Web Servicies: OpenWeatherMap
 * PHP
+* Bootstrap
 * AngularJS
 * REST - SOAP
 * MySQL
